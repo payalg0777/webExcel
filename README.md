@@ -14,30 +14,29 @@
       - Relationship between User and Session (login session details)
 
   * SDL, Query, Mutation
-
+##
      type User {
-     	id: ID!
-     	username: String!
-     	email: String!
-     	sessions: [Session]
-       }
-     
-       type Session {
-     	id: ID!
-     	timestamp: String!
-     	ipAddress: String!
-     	deviceInfo: String!
-       }
-     
-       type Query {
-     	getUser(id: ID!): User
-     	getSession(id: ID!): Session
-       }
-     
-       type Mutation {
-     	loginUser(username: String!, password: String!, ipAddress: String!, deviceInfo: 	String!): Session
-       }
+    	  id: ID!
+    	  username: String!
+    	  email: String!
+    	  sessions: [Session]!
+    	}
 
+    	type Session {
+    	  id: ID!
+    	  timestamp: String!
+    	  ipAddress: String!
+    	  deviceInfo: String!
+    	}
+
+    	type Query {
+    	  getUser(id: ID!): User
+    	  getSession(id: ID!): Session
+    	}
+
+    	type Mutation {
+    	  loginUser(username: String!, password: String!, ipAddress: String!, deviceInfo: 	String!): Session
+    	}
 
 #############
 
@@ -55,25 +54,25 @@
       - Relationship between User and SearchQuery (user's search history).
       - Relationship between User and Device (device used for search).
 
-  * SDL, Query, Mutation 
-
-     type SearchQuery {
+  * SDL, Query, Mutation
+##
+    	type SearchQuery {
     	  id: ID!
     	  text: String!
     	  timestamp: String!
     	}
-    
+
     	type Device {
     	  id: ID!
     	  name: String!
     	  type: String!
     	}
-    
+
     	type Query {
     	  getSearchQuery(id: ID!): SearchQuery
     	  getDevice(id: ID!): Device
     	}
-    
+
     	type Mutation {
     	  searchVideos(userId: ID!, searchText: String!, timestamp: String!, deviceId: ID!): SearchQuery
     	}
@@ -100,8 +99,8 @@
       - Relationship between User and Device (device used for upload).
 
   * SDL, Query, Mutation
-
-    type Video {
+##
+    	type Video {
     	  id: ID!
     	  title: String!
     	  description: String!
@@ -109,18 +108,17 @@
     	  privacy: String!
     	  timestamp: String!
     	}
-    
+
     	type Upload {
     	  id: ID!
     	  userId: ID!
     	  videoId: ID!
     	  timestamp: String!
     	}
-    
+
     	type Mutation {
     	  uploadVideo(userId: ID!, videoId: ID!, title: String!, description: String!, tags: 		[String!]!, privacy: String!, timestamp: String!): Upload
     	}
-    	
 
 #############
 
@@ -141,16 +139,15 @@
       - Relationship between Playlist and Video (videos included in the playlist).
 
   * SDL, Query, Mutation
-
-    type Playlist {
+##
+    	type Playlist {
     	  id: ID!
     	  title: String!
     	  description: String!
     	  videos: [Video]
     	}
-    
+
     	type Mutation {
     	  createPlaylist(userId: ID!, title: String!, description: String!): Playlist
     	  addVideoToPlaylist(userId: ID!, playlistId: ID!, videoId: ID!): Playlist
     	}
-
