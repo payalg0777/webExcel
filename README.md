@@ -15,28 +15,28 @@
 
   * SDL, Query, Mutation
 
-  	  type User {
-    	  id: ID!
-    	  username: String!
-    	  email: String!
-    	  sessions: [Session]
-    	}
-  
-    	type Session {
-    	  id: ID!
-    	  timestamp: String!
-    	  ipAddress: String!
-    	  deviceInfo: String!
-    	}
-    
-    	type Query {
-    	  getUser(id: ID!): User
-    	  getSession(id: ID!): Session
-    	}
-    
-    	type Mutation {
-    	  loginUser(username: String!, password: String!, ipAddress: String!, deviceInfo: 	String!): Session
-    	}
+     type User {
+     	id: ID!
+     	username: String!
+     	email: String!
+     	sessions: [Session]
+       }
+     
+       type Session {
+     	id: ID!
+     	timestamp: String!
+     	ipAddress: String!
+     	deviceInfo: String!
+       }
+     
+       type Query {
+     	getUser(id: ID!): User
+     	getSession(id: ID!): Session
+       }
+     
+       type Mutation {
+     	loginUser(username: String!, password: String!, ipAddress: String!, deviceInfo: 	String!): Session
+       }
 
 
 #############
