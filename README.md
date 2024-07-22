@@ -14,6 +14,7 @@
       - Relationship between User and Session (login session details)
 
   * SDL, Query, Mutation
+
   	  type User {
     	  id: ID!
     	  username: String!
@@ -37,6 +38,7 @@
     	  loginUser(username: String!, password: String!, ipAddress: String!, deviceInfo: 	String!): Session
     	}
 
+
 #############
 
 2. Searching for Videos - Simple
@@ -54,7 +56,8 @@
       - Relationship between User and Device (device used for search).
 
   * SDL, Query, Mutation 
-    	type SearchQuery {
+
+     type SearchQuery {
     	  id: ID!
     	  text: String!
     	  timestamp: String!
@@ -97,7 +100,8 @@
       - Relationship between User and Device (device used for upload).
 
   * SDL, Query, Mutation
-    	type Video {
+
+    type Video {
     	  id: ID!
     	  title: String!
     	  description: String!
@@ -116,6 +120,7 @@
     	type Mutation {
     	  uploadVideo(userId: ID!, videoId: ID!, title: String!, description: String!, tags: 		[String!]!, privacy: String!, timestamp: String!): Upload
     	}
+    	
 
 #############
 
@@ -136,7 +141,8 @@
       - Relationship between Playlist and Video (videos included in the playlist).
 
   * SDL, Query, Mutation
-    	type Playlist {
+
+    type Playlist {
     	  id: ID!
     	  title: String!
     	  description: String!
